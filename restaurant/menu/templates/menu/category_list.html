@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Menu Categories{% endblock %}
+
+{% block content %}
+<h1>Menu Categories</h1>
+<ul>
+    {% for category in categories %}
+    <li><a href="{% url 'menu-items-by-category' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

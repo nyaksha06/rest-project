@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ menu_item.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ menu_item.name }}</h1>
+<p>{{ menu_item.description }}</p>
+<p>Price: ${{ menu_item.price }}</p>
+{% if menu_item.available %}
+<p>Status: Available</p>
+{% else %}
+<p>Status: Not Available</p>
+{% endif %}
+<a href="{% url 'menu-items-by-category' menu_item.category.id %}">Back to {{ menu_item.category.name }}</a>
+{% endblock %}
