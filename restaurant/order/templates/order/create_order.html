@@ -10,7 +10,7 @@
     {% for item in form.items %}
     <div>
         {{ item }}
-        <input type="number" name="quantity_{{ item.auto_id }}" min="1" placeholder="Quantity" required>
+        <input type="number" name="quantity_{{ item.auto_id }}" min="1" placeholder="Quantity" >
     </div>
     {% endfor %}
 

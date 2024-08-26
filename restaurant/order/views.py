@@ -25,17 +25,17 @@ def create_order(request):
             return redirect('order-detail', order_id=order.id)
     else:
         form = OrderForm()
-    return render(request, 'orders/create_order.html', {'form': form})
+    return render(request, 'order/create_order.html', {'form': form})
 
 
 
 @login_required
 def order_detail(request, order_id):
     order = Order.objects.get(id=order_id)
-    return render(request, 'orders/order_detail.html', {'order': order})
+    return render(request, 'order/order_detail.html', {'order': order})
 
 
 @login_required
 def order_list(request):
     orders = Order.objects.filter(user=request.user)
-    return render(request, 'orders/order_list.html', {'orders': orders})
+    return render(request, 'order/order_list.html', {'orders': orders})

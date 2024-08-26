@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import environ
+# import environ
 import os
-import paypalrestsdk
+# import paypalrestsdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'menu',
     'order',
-    # 'payment',
+    'payment',
 
 ]
 
@@ -133,15 +133,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-env = environ.Env()
-environ.Env.read_env()  
+# env = environ.Env()
+# environ.Env.read_env()  
 
-PAYPAL_CLIENT_ID = env('PAYPAL_CLIENT_ID')
-PAYPAL_CLIENT_SECRET = env('PAYPAL_CLIENT_SECRET')
+# PAYPAL_CLIENT_ID = env('PAYPAL_CLIENT_ID')
+# PAYPAL_CLIENT_SECRET = env('PAYPAL_CLIENT_SECRET')
 
 
-paypalrestsdk.configure({
-    "mode": "sandbox", 
-    "client_id": PAYPAL_CLIENT_ID,
-    "client_secret": PAYPAL_CLIENT_SECRET
-})
+# paypalrestsdk.configure({
+#     "mode": "sandbox", 
+#     "client_id": PAYPAL_CLIENT_ID,
+#     "client_secret": PAYPAL_CLIENT_SECRET
+# })
